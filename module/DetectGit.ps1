@@ -19,20 +19,3 @@ function DetectGit {
     Set-Location -Path $PSScriptRoot
     return $gitExists
 }
-
-describe 'DetectGit' {
-    BeforeAll {
-        $testPath = "TestDrive:\test.txt"
-        Set-Content $testPath -value "my test text."
-    }
-
-    it "Gitリポジトリでなければ False を返す" {
-        DetectGit -workdir $TestDrive | Should Be $false
-    }
-
-    it "Gitリポジトリなら True を返す" {
-        Set-Location -Path $TestDrive
-        git init
-        DetectGit -workdir $TestDrive | Should Be $true
-    }
-}
