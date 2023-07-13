@@ -2,6 +2,9 @@ function DetectGit {
     <#
     .SYNOPSIS
     Gitリポジトリかどうか判定する
+
+    .OUTPUTS
+    GitリポジトリならTrue, そうでなければFalse
     #>
     Param (
         [String]
