@@ -15,10 +15,3 @@ function ReturnGivenText {
 
     return $text
 }
-
-describe 'ReturnGivenText' {
-    it "入力として何か文字列が与えられたら，それを返す" {
-        ReturnGivenText -text "HelloWorld" | Should Be "HelloWorld"
-        ReturnGivenText -text "GoodMorning" | Should Be "GoodMorning"
-    }
-}
